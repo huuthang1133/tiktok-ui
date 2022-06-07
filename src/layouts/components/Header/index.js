@@ -1,7 +1,3 @@
-import styles from './Header.module.scss';
-import classNames from 'classnames/bind';
-import images from '~/assets/images';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCoins,
@@ -13,17 +9,20 @@ import {
     faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
-
-import 'tippy.js/dist/tippy.css';
-
+import classNames from 'classnames/bind';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import 'tippy.js/dist/tippy.css';
+import images from '~/assets/images';
 import Button from '~/components/Button';
-import Menu from '~/components/Popper/Menu';
-import { MessageIcon, UploadIcon, InboxIcon } from '~/components/Icons';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
+import Menu from '~/components/Popper/Menu';
+import config from '~/configs';
 import Search from '../Search';
+import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -84,7 +83,7 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faSignOut} />,
             title: 'Log out',
-            to: '/',
+            to: config.routes.home,
             separate: true,
         },
     ];
@@ -92,7 +91,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="logo" />
+                    <Link to={config.routes.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="logo" />
+                    </Link>
                 </div>
                 {/* Search */}
                 <Search />

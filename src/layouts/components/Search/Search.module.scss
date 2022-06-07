@@ -13,6 +13,7 @@
     border: 1.5px solid transparent;
 
     input {
+        font-family: var(--font-family);
         flex: 1;
         color: var(--black);
         height: 100%;
@@ -39,9 +40,9 @@
         border-color: rgba(22, 24, 35, 0.2);
     }
 }
-.search-result {
-    padding-top: 8px;
-}
+// .search-result {
+//     // padding-top: 8px;
+// }
 
 .clear,
 .loading {
