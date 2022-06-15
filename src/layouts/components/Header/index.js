@@ -120,9 +120,7 @@ function Header() {
                     ) : (
                         <>
                             <Button>Upload</Button>
-                            <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
-                                Log in
-                            </Button>
+                            <Button primary>Log in</Button>
                         </>
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
