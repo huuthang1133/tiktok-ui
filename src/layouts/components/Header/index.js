@@ -5,7 +5,6 @@ import {
     faEllipsisVertical,
     faGear,
     faKeyboard,
-    faSignIn,
     faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
